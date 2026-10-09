@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://yicge48108e0"]
+
+[ext_resource type="Script" uid="uid://b0ty32plikcic" path="res://scripts/game.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dvitvyc1ipv4i" path="res://scenes/piano.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ceduuhxo1jupb" path="res://scenes/sheet.tscn" id="2_yqjtg"]
+
+[node name="game" type="Node" unique_id=152594640]
+script = ExtResource("1_lnu2h")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=297867328]
+position = Vector2(-17, -42)
+
+[node name="piano" parent="." unique_id=301801838 instance=ExtResource("1_uwrxv")]
+position = Vector2(-3, 162)
+
+[node name="selected" type="Label" parent="piano" unique_id=430648881]
+offset_left = -526.0
+offset_top = -226.0
+offset_right = -231.0
+offset_bottom = -181.0
+theme_override_font_sizes/font_size = 32
+text = "Nota selecionada: -"
+
+[node name="sheet" parent="." unique_id=1624441492 instance=ExtResource("2_yqjtg")]
+position = Vector2(-178, -328)
+
+[node name="confirm" type="Button" parent="." unique_id=609728395]
+offset_left = 282.0
+offset_top = -18.0
+offset_right = 447.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 32
+text = "Confirmar"
+
+[node name="label_correct" type="Label" parent="." unique_id=2096085066]
+offset_left = -135.0
+offset_top = -198.0
+offset_right = 153.0
+offset_bottom = -110.0
+theme_override_colors/font_color = Color(0.2741998, 0.94675094, 0, 1)
+theme_override_font_sizes/font_size = 64
+
+[node name="play" type="Button" parent="." unique_id=1713028819]
+offset_left = 282.0
+offset_top = -144.0
+offset_right = 446.0
+offset_bottom = -91.0
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[connection signal="pressed" from="confirm" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
