@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://333foy7wyxmw"]
+
+[ext_resource type="Script" uid="uid://b71ta6j5kfix2" path="res://scripts/level.gd" id="1_6sh32"]
+[ext_resource type="Texture2D" uid="uid://c7ghus6sxy08r" path="res://assets/C-major map.jpg" id="2_ejswk"]
+[ext_resource type="PackedScene" uid="uid://dbyaihlnqotx8" path="res://scenes/door.tscn" id="3_bbk5w"]
+[ext_resource type="AudioStream" uid="uid://c6fw1mnwhtt1h" path="res://assets/C_sound.mp3" id="4_conm7"]
+[ext_resource type="AudioStream" uid="uid://drxbkkeddw54t" path="res://assets/F_sound.mp3" id="5_d3jkd"]
+[ext_resource type="AudioStream" uid="uid://du1wc1jm6ge3m" path="res://assets/A_sound.mp3" id="6_u3awl"]
+
+[node name="level1" type="Node2D" unique_id=2124463089]
+script = ExtResource("1_6sh32")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1006422386]
+position = Vector2(6, 513)
+texture = ExtResource("2_ejswk")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1592515035]
+zoom = Vector2(0.5, 0.5)
+
+[node name="door1" parent="." unique_id=198849156 instance=ExtResource("3_bbk5w")]
+position = Vector2(-558, -65)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="door1" unique_id=593659141]
+stream = ExtResource("4_conm7")
+
+[node name="door2" parent="." unique_id=480515633 instance=ExtResource("3_bbk5w")]
+position = Vector2(-1, -63)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="door2" unique_id=167202726]
+stream = ExtResource("5_d3jkd")
+
+[node name="door3" parent="." unique_id=433478073 instance=ExtResource("3_bbk5w")]
+position = Vector2(544, -57)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="door3" unique_id=1217518027]
+stream = ExtResource("6_u3awl")
+
+[node name="question" type="Label" parent="." unique_id=680796952]
+offset_left = -512.0
+offset_top = -491.0
+offset_right = 536.0
+offset_bottom = -403.0
+theme_override_font_sizes/font_size = 64
+text = "QUAL O SOM DA PRIMEIRA NOTA?"
